@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import styles from "./TildeLines.module.css";
 
 interface Props {
-  contentRef: React.RefObject<HTMLDivElement>;
+  contentRef: React.RefObject<HTMLDivElement | null>;
 }
 
 export function TildeLines({ contentRef }: Props) {
