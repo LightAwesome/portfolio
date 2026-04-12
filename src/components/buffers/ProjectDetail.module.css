@@ -1,0 +1,46 @@
+.file {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.back {
+  color: var(--fg4);
+  text-align: left;
+}
+
+.title {
+  color: var(--yellow);
+  font-size: 1.3rem;
+}
+
+.description {
+  color: var(--fg1);
+}
+
+.sectionTitle {
+  color: var(--blue);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  color: var(--green);
+  border: 1px solid var(--color-border);
+  padding: 0.2rem 0.5rem;
+}
+
+.link {
+  color: var(--color-link);
+}
+
+/* Add to each buffer's .module.css */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}

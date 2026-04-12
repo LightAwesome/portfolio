@@ -1,0 +1,41 @@
+.statusline {
+  display: flex;
+  align-items: center;
+  height: var(--statusline-h);
+  background: var(--bg1);
+  font-size: var(--text-xs);
+  user-select: none;
+}
+
+.mode {
+  padding: 0 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: var(--mode-normal);
+  color: var(--bg);
+  font-weight: 700;
+}
+
+.statusline[data-mode='command'] .mode {
+  background: var(--mode-command);
+}
+
+.filename {
+  color: var(--fg1);
+  padding: 0 12px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.hint {
+  color: var(--fg4);
+  padding: 0 12px;
+}
+
+.time {
+  color: var(--fg2);
+  padding: 0 10px;
+}

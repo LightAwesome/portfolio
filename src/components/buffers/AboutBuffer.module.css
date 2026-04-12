@@ -1,0 +1,44 @@
+.file {
+  font-size: var(--text-base);
+}
+
+.line {
+  display: flex;
+  gap: 16px;
+  min-height: 1.8em;
+  align-items: baseline;
+}
+
+.linenum {
+  min-width: 32px;
+  text-align: right;
+  color: var(--color-text-dim);
+  font-size: var(--text-sm);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  color: var(--color-text);
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  background: var(--color-text);
+  animation: blink 1.2s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}

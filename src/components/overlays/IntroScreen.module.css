@@ -1,0 +1,64 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 300ms ease;
+}
+
+/* When introSeen flips, parent removes it — add exit animation via CSS */
+.overlay[data-leaving="true"] {
+  animation: fadeOut 200ms ease forwards;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.ascii {
+  color: var(--yellow);
+  font-size: var(--text-sm);
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.name  { font-size: 22px; color: var(--fg);  font-weight: 700; }
+.title { font-size: var(--text-sm); color: var(--fg4); margin-bottom: 32px; }
+
+.menu  { display: flex; flex-direction: column; gap: 8px; margin-bottom: 32px; }
+
+.item {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 4px 0;
+  cursor: pointer;
+}
+.item:hover .key { color: var(--yellow); }
+
+.bracket { color: var(--bg3); }
+.key     { color: var(--blue); min-width: 110px; }
+.desc    { color: var(--fg4); font-size: var(--text-sm); }
+
+.footer {
+  display: flex;
+  gap: 12px;
+  color: var(--fg4);
+  font-size: var(--text-sm);
+  margin-bottom: 16px;
+}
+.dot { color: var(--bg3); }
+.cmd { color: var(--yellow); }
+
+.version { color: var(--bg4); font-size: var(--text-xs); margin-bottom: 8px; }
+.hint    { color: var(--bg4); font-size: var(--text-xs); animation: blink 1.5s step-end infinite; }
+
+@keyframes blink   { 50% { opacity: 0; } }
+@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }

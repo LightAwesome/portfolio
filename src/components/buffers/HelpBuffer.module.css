@@ -1,0 +1,12 @@
+.file        { font-size: var(--text-sm); line-height: 1.75; }
+.header      { color: var(--aqua); margin-bottom: 2px; }
+.tag         { color: var(--green); }
+.sectionLine { display: flex; justify-content: space-between; margin-top: 2px; }
+.sectionTitle{ color: var(--yellow); font-weight: 700; }
+.rule        { color: var(--bg3); }
+.body        { color: var(--fg1); }
+.kv          { display: flex; padding: 1px 0; }
+.kvKey       { color: var(--blue); min-width: 200px; }
+.kvVal       { color: var(--fg2); }
+.ref         { color: var(--aqua); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.footer      { color: var(--fg4); font-size: var(--text-xs); margin-top: 20px; font-style: italic; }

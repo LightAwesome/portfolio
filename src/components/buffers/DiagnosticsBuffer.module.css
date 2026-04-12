@@ -1,0 +1,19 @@
+.file {
+  font-size: var(--text-sm);
+}
+
+.header {
+  color: var(--fg1);
+  margin-bottom: 12px;
+}
+
+.section {
+  color: var(--yellow);
+  font-weight: 700;
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+.row {
+  color: var(--fg2);
+}

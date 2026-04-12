@@ -1,0 +1,41 @@
+.file {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dir {
+  color: var(--yellow);
+  margin-bottom: 0.5rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 180px 80px 1fr;
+  gap: 1rem;
+  text-align: left;
+  padding: 0.35rem 0.5rem;
+}
+
+.row:hover {
+  background: rgba(250, 189, 47, 0.08);
+}
+
+.name {
+  color: var(--blue);
+}
+
+.year {
+  color: var(--fg4);
+}
+
+.stack {
+  color: var(--fg2);
+}
+
+/* Add to each buffer's .module.css */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}

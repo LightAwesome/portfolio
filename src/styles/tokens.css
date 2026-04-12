@@ -1,0 +1,68 @@
+/* src/styles/tokens.css */
+
+:root {
+  /* Gruvbox medium dark — backgrounds */
+  --bg:      #282828;
+  --bg-soft: #32302f;
+  --bg1:     #3c3836;
+  --bg2:     #504945;
+  --bg3:     #665c54;
+  --bg4:     #7c6f64;
+
+  /* Foregrounds */
+  --fg:  #ebdbb2;
+  --fg1: #d5c4a1;
+  --fg2: #bdae93;
+  --fg3: #a89984;
+  --fg4: #928374;
+
+  /* Accent colors */
+  --red:    #fb4934;
+  --green:  #b8bb26;
+  --yellow: #fabd2f;
+  --blue:   #83a598;
+  --aqua:   #8ec07c;
+  --orange: #fe8019;
+  --purple: #d3869b;
+
+  /* Semantic — use ONLY these in components */
+  --color-bg:             var(--bg);
+  --color-surface:        var(--bg1);
+  --color-border:         var(--bg2);
+  --color-border-active:  var(--bg4);
+  --color-text:           var(--fg);
+  --color-text-muted:     var(--fg3);
+  --color-text-dim:       var(--fg4);
+  --color-accent:         var(--yellow);   /* ONE accent — active/selected only */
+  --color-link:           var(--blue);
+  --color-success:        var(--green);
+  --color-error:          var(--red);
+
+  /* Mode-specific */
+  --mode-normal:  var(--blue);
+  --mode-command: var(--yellow);
+
+  /* Layout constants */
+  --sidebar-w:     220px;
+  --bufferline-h:  34px;
+  --statusline-h:  40px;
+  --pane-gap:      1px;
+
+  /* Typography */
+  --font:           'JetBrains Mono', monospace;
+  --text-xs:        11px;
+  --text-sm:        13px;
+  --text-base:      15px;
+  --lh-ui:          1.25;
+  --lh-prose:       1.8;
+}
+
+.gruvbox-light {
+  --color-bg:            #fbf1c7;
+  --color-surface:       #ebdbb2;
+  --color-border:        #d5c4a1;
+  --color-border-active: #bdae93;
+  --color-text:          #3c3836;
+  --color-text-muted:    #7c6f64;
+  --color-text-dim:      #928374;
+}
