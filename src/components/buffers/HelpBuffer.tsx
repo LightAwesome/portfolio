@@ -37,7 +37,7 @@ export function HelpBuffer() {
       <Gap />
       <KV k="j / k" v="navigate buffers in sidebar" />
       <KV k="Tab / Shift-Tab" v="cycle through open buffers" />
-      <KV k="e" v="toggle file explorer" />
+      <KV k="\" v="toggle file explorer" />
       <KV k=":" v="open command palette" />
       <KV k="Esc" v="close / go back" />
       <KV k="/ (projects)" v="open telescope search" />
