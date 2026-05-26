@@ -1,6 +1,0 @@
-.eq      { color: var(--fg3); }
-.key     { color: var(--blue); }
-.section { color: var(--yellow); }
-.string  { color: var(--green); }
-.comment { color: var(--fg4); font-style: italic; }
-.spacer  { height: 0.9em; }

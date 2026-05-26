@@ -1,5 +1,0 @@
-/* TildeLines.module.css */
-.tildes { pointer-events: none; user-select: none; }
-.line   { display: flex; gap: 16px; height: 27px; align-items: center; }
-.linenum { min-width: 32px; }
-.tilde  { color: var(--bg3); font-size: var(--text-base); }
