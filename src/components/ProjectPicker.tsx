@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
+import { flushSync } from "react-dom";
 import { projects, type Project } from "@/data/projects";
 import { PICK_EVENT } from "@/editor/keys";
 import Diagram from "./Diagram";
@@ -38,8 +39,7 @@ export default function ProjectPicker() {
   useEffect(() => {
     const onPick = (e: Event) => {
       const i = (e as CustomEvent<number>).detail;
-      setQuery("");
-      setSel(i);
+      flushSync(() => { setQuery(""); setSel(i); });
     };
     window.addEventListener(PICK_EVENT, onPick);
     return () => window.removeEventListener(PICK_EVENT, onPick);

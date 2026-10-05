@@ -1,3 +1,4 @@
+import { flushSync } from "react-dom";
 import { helpStore, type Buffer } from "./buffer";
 import { projects } from "@/data/projects";
 import { profile } from "@/data/profile";
@@ -57,13 +58,12 @@ export function attachKeys(main: HTMLElement, buf: Buffer) {
     const ql = q.toLowerCase();
     // A match inside another project's details: bring that project into the preview first.
     const p = projects.findIndex((x) => [x.name, x.summary, x.note, x.stack, x.metric].join(" ").toLowerCase().includes(ql));
+    // The picker commits synchronously (flushSync in its listener), so the preview is in the DOM now.
     if (p >= 0) window.dispatchEvent(new CustomEvent(PICK_EVENT, { detail: p }));
-    requestAnimationFrame(() => {
-      hits = searchRanges(main, q);
-      if (!hits.length) { buf.say(`Pattern not found: ${q}`, true); return; }
-      hl?.set("search", new Highlight(...hits));
-      step(1);
-    });
+    hits = searchRanges(main, q);
+    if (!hits.length) { buf.say(`Pattern not found: ${q}`, true); return; }
+    hl?.set("search", new Highlight(...hits));
+    step(1);
   }
 
   const jump = (id: string) => buf.goTo(document.getElementById(id));
@@ -72,7 +72,7 @@ export function attachKeys(main: HTMLElement, buf: Buffer) {
     experience: () => jump("experience"),
     stack: () => jump("stack"),
     contact: () => jump("contact"),
-    help: () => { helpStore.set(true); requestAnimationFrame(() => jump("help")); },
+    help: () => { flushSync(() => helpStore.set(true)); jump("help"); },
     resume: () => (profile.resume ? location.assign(profile.resume) : resumeMessage(buf)),
     noh: () => { clearSearch(); buf.say(""); },
     "set rnu": () => buf.setRelative(true),
