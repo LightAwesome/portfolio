@@ -1,13 +1,39 @@
-export type Role = { company: string; place?: string; title: string; when: string; head?: boolean; bullets: { text: string; metric?: string }[] };
+// The hero's split window shows a visual tied to whatever you do now.
+// "sim" is the live traffic sim; "diagram" shows a project's architecture diagram.
+export type Visual =
+  | { kind: "sim"; file: string; caption: string }
+  | { kind: "diagram"; project: string; caption: string };
 
-// Bullets use {metric} as the slot for the highlighted number.
+export type Role = {
+  company: string;
+  place?: string;
+  title: string;
+  when: string;
+  url?: string;
+  // Exactly one role (or none) is current. It drives the hero's "now" line, the split window,
+  // and the (HEAD -> now) marker in the experience log.
+  // When a job ends: remove `current`, finish `when` (e.g. "2026-05..2026-12"), and give the
+  // next role `current: true` and its own `visual` if it has one.
+  // Static copies to update by hand: the description, og:description and JSON-LD worksFor in
+  // index.html, and public/og.png.
+  current?: boolean;
+  visual?: Visual;
+  bullets: { text: string; metric?: string }[]; // {metric} marks the highlighted number
+};
+
 export const experience: Role[] = [
   {
     company: "Inverted AI",
     place: "Vancouver",
     title: "autonomous driving",
     when: "2026..now",
-    head: true,
+    url: "https://inverted.ai",
+    current: true,
+    visual: {
+      kind: "sim",
+      file: "sim.lua",
+      caption: "Inverted AI builds simulated drivers for testing self-driving cars. This is a tiny one, running live.",
+    },
     bullets: [],
   },
   {
@@ -21,3 +47,12 @@ export const experience: Role[] = [
     ],
   },
 ];
+
+export const currentRole = experience.find((r) => r.current);
+
+// Shown in the split when there is no current role, or the current role has no visual of its own.
+export const fallbackVisual: Visual = {
+  kind: "diagram",
+  project: "fastSQL-qe",
+  caption: "Between jobs, so here's how my favourite project is put together.",
+};

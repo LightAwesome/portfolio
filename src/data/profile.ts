@@ -1,11 +1,18 @@
+import { currentRole } from "./experience";
+
+const school = "UBC BSc CS, May 2028";
+const seeking = "Summer 2027 internship";
+
 export const profile = {
   name: "Mohammed Touseef Ansari",
   email: "welcometouseef@gmail.com",
-  // Each fact is one column of the hero's fact line.
+  school,
+  seeking,
+  // `now` comes from the current role in experience.ts, so changing jobs is a one-place edit.
   facts: [
-    { label: "now", value: "Inverted AI, Vancouver" },
-    { label: "school", value: "UBC BSc CS, May 2028" },
-    { label: "seeking", value: "Summer 2027 internship" },
+    ...(currentRole ? [{ label: "now", value: [currentRole.company, currentRole.place].filter(Boolean).join(", "), now: true }] : []),
+    { label: "school", value: school },
+    { label: "seeking", value: seeking },
   ],
   // Set once resume.pdf is in public/. Until then the link explains instead of 404ing.
   resume: null as string | null,
@@ -13,5 +20,5 @@ export const profile = {
     { label: "github", href: "https://github.com/LightAwesome" },
     { label: "linkedin", href: "https://www.linkedin.com/in/mohammed-touseef-ansari" },
   ],
-  status: "Summer 2027 internship │ UBC CS May 2028",
+  status: `${seeking} │ UBC CS May 2028`,
 };

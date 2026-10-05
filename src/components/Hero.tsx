@@ -1,6 +1,6 @@
 import { profile } from "@/data/profile";
 import Line from "./Line";
-import RoadCanvas from "./RoadCanvas";
+import Showcase from "./Showcase";
 import { useBufferApi } from "@/editor/context";
 import { resumeMessage } from "@/editor/keys";
 
@@ -19,7 +19,7 @@ export default function Hero() {
         <Line>
           <dl className="facts">
             {profile.facts.map((f) => (
-              <div key={f.label}>
+              <div key={f.label} className={"now" in f ? "fact-now" : undefined}>
                 <dt>{f.label}</dt>
                 <dd>{f.value}</dd>
               </div>
@@ -43,7 +43,7 @@ export default function Hero() {
           </nav>
         </Line>
       </div>
-      <RoadCanvas />
+      <Showcase />
     </section>
   );
 }

@@ -115,11 +115,21 @@ h1 .mk { color: var(--nontext); font-weight: 300; }
 .resume:hover { background: var(--cursor); color: var(--bg); }
 @media (pointer: coarse) { .links a { padding-block: 10px; } }
 
-.split { border: 1px solid var(--bg3); background: var(--bg); margin: var(--line) var(--pad) 0 var(--indent); }
+.split { border: 1px solid var(--bg3); background: var(--bg); margin: var(--line) var(--pad) 0 var(--indent); transition: border-color 0.15s; }
 @media (min-width: 1000px) { .split { margin: var(--line) 0 0; } }
+/* winbar: nvim's per-window title line, saying whose file this is */
+.winbar { display: flex; align-items: baseline; gap: 1.5ch; background: var(--bg1); font-size: var(--fs-s); line-height: 1.9; padding-right: 1.5ch; white-space: nowrap; overflow: hidden; }
+.win-tag { background: var(--str); color: var(--bg); font-weight: 700; padding: 0 1ch; }
+.win-path { color: var(--fg); overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.win-link { margin-left: auto; }
+.split-caption { padding: 6px 1.5ch 8px; font-size: var(--fs-s); line-height: 1.5; border-top: 1px solid var(--bg3); }
+.split-diagram { padding: 12px 1.5ch; }
+/* the "now" fact and the window it explains light up together */
+.fact-now dd { text-decoration: underline dotted var(--str); text-underline-offset: 4px; }
+.hero:has(.fact-now:hover) .split, .hero:has(.split:hover) .split { border-color: var(--str); }
+.hero:has(.split:hover) .fact-now dd { color: var(--str); }
 .road { display: block; width: 100%; height: clamp(200px, 30vw, 340px); }
 .split-status { display: flex; gap: 2ch; background: var(--bg1); font-size: 12px; line-height: 1.9; padding: 0 1.5ch; color: var(--comment); white-space: nowrap; overflow: hidden; }
-.split-file { color: var(--fg); font-weight: 700; }
 .split-ego { margin-left: auto; color: var(--cursor); }
 
 /* ---------- projects: Telescope-style picker ---------- */

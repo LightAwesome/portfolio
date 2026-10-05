@@ -215,13 +215,13 @@ export default function RoadCanvas() {
   }, []);
 
   return (
-    <figure className="split" aria-hidden="true">
-      <canvas ref={ref} className="road" />
-      <figcaption className="split-status">
-        <span className="split-file">sim.lua</span>
+    <>
+      <canvas ref={ref} className="road" aria-hidden="true" />
+      <div className="split-status" aria-hidden="true">
         <span>{status.agents} agents</span>
+        <span>signals on</span>
         <span className="split-ego">ego: {status.ego}</span>
-      </figcaption>
-    </figure>
+      </div>
+    </>
   );
 }

@@ -22,8 +22,8 @@ export default function Experience() {
                 <span className="logl">
                   <span className="g star" aria-hidden="true">*</span>
                   <span>
-                    {r.head && <span className="deco">(HEAD -&gt; now) </span>}
-                    <span className="co">{r.company}</span>
+                    {r.current && <span className="deco">(HEAD -&gt; now) </span>}
+                    <span className="co">{r.url ? <a href={r.url}>{r.company}</a> : r.company}</span>
                     {r.place && <>, {r.place}</>} <span className="role">{r.title}</span> <span className="when">{r.when}</span>
                   </span>
                 </span>
