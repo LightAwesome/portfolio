@@ -1,6 +1,6 @@
 /* touseef.md: the page is an open Neovim session. Tokens are Gruvbox dark hard, used as syntax. See docs/design.md. */
-@font-face { font-family: "Monaspace Neon"; src: url("/fonts/monaspace-neon.woff2") format("woff2"); font-weight: 300 800; font-stretch: 100% 125%; font-display: swap; }
-@font-face { font-family: "Monaspace Radon"; src: url("/fonts/monaspace-radon.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Buffer Neon"; src: url("/fonts/buffer-neon.woff2") format("woff2"); font-weight: 300 800; font-stretch: 100% 125%; font-display: swap; }
+@font-face { font-family: "Buffer Radon"; src: url("/fonts/buffer-radon.woff2") format("woff2"); font-weight: 400; font-display: swap; }
 
 :root {
   color-scheme: dark;
@@ -20,8 +20,8 @@
   --field: #8ec07c;    /* table keys, git decorations, stores */
   --err: #fb4934;      /* error messages, red lights */
 
-  --mono: "Monaspace Neon", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  --hand: "Monaspace Radon", "Monaspace Neon", ui-monospace, monospace;
+  --mono: "Buffer Neon", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --hand: "Buffer Radon", "Buffer Neon", ui-monospace, monospace;
   --fs: 15px;
   --fs-s: 13px;
   --fs-name: clamp(32px, 3.7vw, 58px);
