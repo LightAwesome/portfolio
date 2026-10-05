@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://touseef.pages.dev/sitemap.xml
