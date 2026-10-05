@@ -10,7 +10,7 @@ export const profile = {
   seeking,
   // `now` comes from the current role in experience.ts, so changing jobs is a one-place edit.
   facts: [
-    ...(currentRole ? [{ label: "now", value: [currentRole.company, currentRole.place].filter(Boolean).join(", "), now: true }] : []),
+    ...(currentRole ? [{ label: "now", value: `${currentRole.company}, ${currentRole.title}`, now: true }] : []),
     { label: "school", value: school },
     { label: "seeking", value: seeking },
   ],

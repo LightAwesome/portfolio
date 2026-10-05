@@ -25,7 +25,7 @@ export const experience: Role[] = [
   {
     company: "Inverted AI",
     place: "Vancouver",
-    title: "autonomous driving",
+    title: "research intern",
     when: "2026..now",
     url: "https://inverted.ai",
     current: true,
@@ -34,7 +34,9 @@ export const experience: Role[] = [
       file: "sim.lua",
       caption: "Inverted AI builds simulated drivers for testing self-driving cars. This is a tiny one, running live.",
     },
-    bullets: [],
+    bullets: [
+      { text: "Systems work on the test vehicle: NVIDIA Jetson Thor compute, Leopard Imaging cameras, and the end-to-end pipeline between them." },
+    ],
   },
   {
     company: "Markaba",
